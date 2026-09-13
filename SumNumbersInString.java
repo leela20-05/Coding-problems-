@@ -19,7 +19,8 @@ public class SumNumbersInString {
                 num = num * 10 + (ch - '0');
                 // Here we are writing ch-'0' because ch is not converted as integer we just
                 // verified wheather it is an integer or not
-                // so basically 5 represent its ascii value so we have do - '0' so tht we can
+                // so basically 5 represent its ascii value so we have to do - '0' so that we
+                // can
                 // get actual integer value
 
                 // Integer.toString(ch) here ch is converted into its unicode/ASCII integer
