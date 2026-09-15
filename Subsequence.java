@@ -30,7 +30,7 @@ public class Subsequence {
                 i++;
             }
         }
-        if (j == arr1.length) {
+        if (j == arr2.length) {
             return true;
         }
         return false;
