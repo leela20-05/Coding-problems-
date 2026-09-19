@@ -16,26 +16,38 @@ public class ValidParanthesis {
             char ch = s.charAt(i);
             if (ch == '(' || ch == '[' || ch == '{') {
                 st.push(ch);
-            } else if (ch == ')' || ch == ']' || ch == '}') {
+            } else {
                 if (st.isEmpty()) {
                     return false;
                 }
+                if (ch == ')' && st.peek() == '(') {
+                    st.pop();
+                } else if (ch == ']' && st.peek() == '[') {
+                    st.pop();
+                } else if (ch == '}' && st.peek() == '{') {
+                    st.pop();
+                } else {
+                    return false;
+                }
             }
+        }
 
-            if (ch == ')' && st.peek() == '(') {
-                st.pop();
-            }
-            if (ch == ']' && st.peek() == '[') {
-                st.pop();
-            }
-            if (ch == '}' && st.peek() == '{') {
-                st.pop();
-            }
-        }
-        if (st.isEmpty()) {
-            return true;
-        } else {
-            return false;
-        }
+        return st.isEmpty();
+
+        // if(st.isEmpty()) {
+        // return true;
+        // }
+        // else {
+        // return false;
+        // }
+        // we can also write in this way
     }
 }
+
+// TIME COMPLEXITY - O(n)
+// For each character:
+
+// push() → O(1)
+// pop() → O(1)
+// peek() → O(1)
+// isEmpty() → O(1)
